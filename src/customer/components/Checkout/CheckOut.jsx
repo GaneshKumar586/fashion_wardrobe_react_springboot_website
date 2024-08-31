@@ -88,7 +88,7 @@ export default function CheckOut() {
                                             display: 'none',
                                         },}
                                     }} lg={5}>
-                                        {[1, 1, 1, 1].map((unit) => <AddressCard />)}
+                                        {[1, 1, 1, 1].map((unit) => <AddressCard button={true} />)}
                                     </Grid>
                                     <Grid sx={{mt:0,pl:8,pr:8,
                                         border: 1, borderRadius: '12px',

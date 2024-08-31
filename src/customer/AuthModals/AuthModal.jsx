@@ -8,6 +8,7 @@ import { useLocation } from 'react-router-dom';
 import LoginModal from './LoginModal';
 import SignupModal from './SignupModal';
 
+
 const style = {
     position: 'absolute',
     top: '50%',

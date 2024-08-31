@@ -9,7 +9,8 @@ import Order from '../customer/components/Order/Order'
 import OrderDetails from '../customer/components/Order/OrderDetails'
 // import Navigation from '../customer/components/navigation/Navigation'
 import Footer from '../customer/components/Footer/Footer'
-import Navigation from '../customer/components/navigation/navigation'
+import Navigation from '../customer/components/navigation/Navigation'
+// import Navigation from '../customer/components/navigation/navigation'
 
 const CustomerRoutes = () => {
   return (
@@ -26,11 +27,6 @@ const CustomerRoutes = () => {
             <Route path='/product/:productId' element={<ProductPage/>}></Route>
             <Route path='/account/order' element={<Order/>}></Route>
             <Route path='/account/order/:orderId' element={<OrderDetails/>}></Route>
-            
-            
-            
-            
-            
             
         </Routes>
     </div>

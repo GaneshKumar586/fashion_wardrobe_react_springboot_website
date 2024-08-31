@@ -1,6 +1,6 @@
 const mens_shirt = [
     {
-        "imageUrl": "https://rukminim1.flixcart.com/image/612/612/k4d27ww0/shirt/q/w/t/l-el024-el-senor-original-imafnadnjp5pq6tg.jpeg?q=70",
+        "imageUrl": "https://assets.ajio.com/medias/sys_master/root/20240311/RsL5/65ee5c4f16fd2c6e6a4b64bf/-473Wx593H-467139736-navy-MODEL.jpg",
         "brand": "El Senor",
         "title": "Men Regular Fit Solid Cut Away Collar Formal Shirt",
         "color": "white",
@@ -28,7 +28,7 @@ const mens_shirt = [
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim1.flixcart.com/image/612/612/xif0q/shirt/f/z/l/m-white-formal-youthfirst-original-imagqjdfgwjfwgsb.jpeg?q=70",
+        "imageUrl": "https://assets.ajio.com/medias/sys_master/root/20231012/HdPl/65281deaddf779151937f91d/-473Wx593H-466701367-cream-MODEL.jpg",
         "brand": "youth first",
         "title": "Men Regular Fit Solid Curved Collar Formal Shirt",
         "color": "white",
@@ -56,7 +56,7 @@ const mens_shirt = [
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim1.flixcart.com/image/612/612/xif0q/shirt/i/a/z/4xl-white-vtexx-original-imagnzecssjs3y9g.jpeg?q=70",
+        "imageUrl": "https://assets.ajio.com/medias/sys_master/root/20240206/0xxB/65c15fef16fd2c6e6adc3e02/-473Wx593H-466817674-pink-MODEL.jpg",
         "brand": "VTEXX",
         "title": "Men Regular Fit Solid Cut Away Collar Formal Shirt",
         "color": "white",
@@ -112,7 +112,7 @@ const mens_shirt = [
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim1.flixcart.com/image/612/612/xif0q/shirt/7/k/2/xl-kcsh-fo-1647-ma-fubar-original-imaghehzpwgjzg2y.jpeg?q=70",
+        "imageUrl": "https://assets.ajio.com/medias/sys_master/root/20230215/Ixlj/63ed08a8aeb26924e3742fc1/-473Wx593H-469264647-olive-MODEL.jpg",
         "brand": "FUBAR",
         "title": "Men Slim Fit Solid Spread Collar Formal Shirt",
         "color": "white",
@@ -140,7 +140,7 @@ const mens_shirt = [
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim1.flixcart.com/image/612/612/xif0q/shirt/x/m/n/40-men-regular-slim-fit-solid-button-down-collar-formal-shirt-original-imagf4mn9zg7qrmf-bb.jpeg?q=70",
+        "imageUrl": "https://assets.ajio.com/medias/sys_master/root/20230215/Ixlj/63ed08a8aeb26924e3742fc1/-473Wx593H-469264647-olive-MODEL.jpg",
         "brand": "MILDIN",
         "title": "Men Slim Fit Solid Spread Collar Formal Shirt",
         "color": "white",
@@ -168,7 +168,7 @@ const mens_shirt = [
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim1.flixcart.com/image/612/612/xif0q/shirt/z/q/n/l-frml-st2-vebnor-original-imagqwyfw9gguwvc.jpeg?q=70",
+        "imageUrl": "https://assets.ajio.com/medias/sys_master/root/20240707/0tLT/668ac4c71d763220fa1094de/-473Wx593H-700171129-brown-MODEL.jpg",
         "brand": "VeBNoR",
         "title": "Men Regular Fit Solid Button Down Collar Formal Shirt",
         "color": "white",
@@ -196,7 +196,7 @@ const mens_shirt = [
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim1.flixcart.com/image/612/612/xif0q/shirt/w/0/g/xl-bkchx3-bk-brand-original-imagqfdgf3s6fefd.jpeg?q=70",
+        "imageUrl": "https://assets.ajio.com/medias/sys_master/root/20240627/WF8e/667cfa466f60443f31c118bc/-473Wx593H-700132335-navy-MODEL.jpg",
         "brand": "BK BRAND",
         "title": "Men Regular Fit Checkered Spread Collar Formal Shirt",
         "color": "white",

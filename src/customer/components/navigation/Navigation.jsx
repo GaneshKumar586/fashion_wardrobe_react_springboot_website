@@ -35,6 +35,8 @@ import { useLoaderData, useLocation, useNavigate } from 'react-router-dom'
 import AuthModal from '../../AuthModals/AuthModal'
 import SignupModal from '../../AuthModals/SignupModal'
 import { useDispatch, useSelector } from 'react-redux'
+import { getUser, logout } from '../../../state/authState/Action'
+import { Category } from '@mui/icons-material'
 
 const navigation = {
   categories: [
@@ -61,7 +63,11 @@ const navigation = {
           name: 'Clothing',
           items: [
             { name: 'Tops', href: '#' },
-            // { name: 'Dresses', href: '#' },
+            { name: 'Kurta Suit', href: '#' },
+            { name: 'Sarees', href: '#' },
+            { name: 'Kurtis', href: '#' },
+            { name: 'Salwars ', href: '#' },
+            { name: 'Churidars', href: '#' },
             { name: 'Pants', href: '#' },
             { name: 'Denim', href: '#' },
             { name: 'Sweaters', href: '#' },
@@ -119,19 +125,20 @@ const navigation = {
           id: 'clothing',
           name: 'Clothing',
           items: [
+            { name: 'Jeans', href: '#' },
+            { name: 'Suit Pieces', href: '#' },
+            { name: 'Blazers', href: '#' },
+            { name: 'Boxers', href: '#' },
             { name: 'Shirts', href: '#' },
             { name: 'Hoodies', href: '#' },
             { name: 'Sweatshirts', href: '#' },
-            { name: 'Pants', href: '#' },
+            { name: 'Trousers', href: '#' },
             { name: 'Sweaters', href: '#' },
             { name: 'T-Shirts', href: '#' },
             { name: 'Jackets', href: '#' },
-            { name: 'Activewear', href: '#' },
-            // { name: 'Browse All', href: '#' },
-            { name: 'Sweaters', href: '#' },
-            { name: 'T-Shirts', href: '#' },
-            { name: 'Jackets', href: '#' },
-            { name: 'Activewear', href: '#' },
+            { name: 'Briefs&Trunks ', href: '#' },
+            { name: 'Waistcoats', href: '#' },
+            
           ],
         },
         {
@@ -159,63 +166,63 @@ const navigation = {
       ],
     },
     {
-        id: 'kids',
-        name: 'Kids',
-        featured: [
-          {
-            name: 'New Arrivals',
-            href: '#',
-            imageSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREEp9cPD9NQhYR9pbrcm0jkzeQVp8c2b9pyg&s',
-            imageAlt: 'Models sitting back to back, wearing Basic Tee in black and bone.',
-          },
-          {
-            name: 'Basic Tees',
-            href: '#',
-            imageSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdNzkbopyIh8FsXElYpUuEEGkwr1JiXRauAQ&s',
-            imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
-          },
-        ],
-        sections: [
-          {
-            id: 'clothing',
-            name: 'Clothing',
-            items: [
-              { name: 'Sleeveless', href: '#' },
-              // { name: 'DresFloral Printses', href: '#' },
-              { name: 'Denim ', href: '#' },
-              // { name: 'Long Sleeve', href: '#' },
-              { name: 'Sweaters', href: '#' },
-              { name: 'T-Shirts', href: '#' },
-              { name: 'Jackets', href: '#' },
-              { name: 'Activewear', href: '#' },
-              // { name: 'Browse All', href: '#' },
-            ],
-          },
-          {
-            id: 'accessories',
-            name: 'Accessories',
-            items: [
-              { name: 'Watches', href: '#' },
-              { name: 'Wallets', href: '#' },
-              { name: 'Bags', href: '#' },
-              { name: 'Sunglasses', href: '#' },
-              { name: 'Hats', href: '#' },
-              { name: 'Belts', href: '#' },
-            ],
-          },
-          {
-            id: 'brands',
-            name: 'Brands',
-            items: [
-              { name: 'Full Nelson', href: '#' },
-              { name: 'My Way', href: '#' },
-              { name: 'Re-Arranged', href: '#' },
-              { name: 'Counterfeit', href: '#' },
-              { name: 'Significant Other', href: '#' },
-            ],
-          },
-        ],
-      },
+      id: 'kids',
+      name: 'Kids',
+      featured: [
+        {
+          name: 'New Arrivals',
+          href: '#',
+          imageSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREEp9cPD9NQhYR9pbrcm0jkzeQVp8c2b9pyg&s',
+          imageAlt: 'Models sitting back to back, wearing Basic Tee in black and bone.',
+        },
+        {
+          name: 'Basic Tees',
+          href: '#',
+          imageSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdNzkbopyIh8FsXElYpUuEEGkwr1JiXRauAQ&s',
+          imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
+        },
+      ],
+      sections: [
+        {
+          id: 'clothing',
+          name: 'Clothing',
+          items: [
+            { name: 'Sleeveless', href: '#' },
+            { name: 'Shorts', href: '#' },
+            { name: 'Denim ', href: '#' },
+            { name: 'LongSleeve', href: '#' },
+            { name: ' 3/4ths', href: '#' },
+            { name: 'T-Shirts', href: '#' },
+            { name: 'Jackets', href: '#' },
+            { name: 'Activewear', href: '#' },
+            { name: ' Track Pants', href: '#' },
+          ],
+        },
+        {
+          id: 'accessories',
+          name: 'Accessories',
+          items: [
+            { name: 'Watches', href: '#' },
+            { name: 'Wallets', href: '#' },
+            { name: 'Bags', href: '#' },
+            { name: 'Sunglasses', href: '#' },
+            { name: 'Hats', href: '#' },
+            { name: 'Belts', href: '#' },
+          ],
+        },
+        {
+          id: 'brands',
+          name: 'Brands',
+          items: [
+            { name: 'Full Nelson', href: '#' },
+            { name: 'My Way', href: '#' },
+            { name: 'Re-Arranged', href: '#' },
+            { name: 'Counterfeit', href: '#' },
+            { name: 'Significant Other', href: '#' },
+          ],
+        },
+      ],
+    },
   ],
   pages: [
     { name: 'Company', href: '#' },
@@ -231,54 +238,76 @@ function classNames(...classes) {
 
 export default function Navigation() {
   const [open, setOpen] = useState(false)
+  const [sectiont, setSectiont] = useState('');
+  const [categoryt, setCategoryt] = useState('');
+  const [itemt, setItemt] = useState('');
   const [openAuthModal, setOpenAuthModal] = useState(false);
   const [anchorEl, setAnchorEl] = useState(false);
   const openUserMenu = Boolean(anchorEl);
-  const navigate= useNavigate();
+  const navigate = useNavigate();
   const jwt = localStorage.getItem("jwt");
-  const {auth} = useSelector(store=>store)
+  const { auth } = useSelector(store => store)
   const dispatch = useDispatch();
   const location = useLocation();
-  const handleNavigation=()=>{
+  const handleNavigation = () => {
     navigate('/{}/{}/{}')
   }
-  const handleUserClick = (event) =>{
+  const handleUserClick = (event) => {
     setAnchorEl(event.currentTarget);
   }
-  const handleCloseUserMenu = (event) =>{
+  const handleCloseUserMenu = (event) => {
     setAnchorEl(null);
   }
-  const handleOpen = () =>{
+  const handleOpenlogin = () => {
+    navigate('/signup');
     setOpenAuthModal(true);
   }
 
-  const handleClose = () =>{
+  const handleOpensignup = () => {
+    navigate('/signup');
+    setOpenAuthModal(true);
+  }
+
+  const handleClose = () => {
     setOpenAuthModal(false);
     // navigate("/")
   }
-
-  const handleCategoryClick = (category, section, item, close) => {
-    navigate(`/${category.id}/${section.id}/${item.id}`);
-    close();
+//  const handlePopoverClose=()=>{
+//    setOpen(!open);
+//  }
+  const handleCategoryClick = (category, section, item) => {
+    setCategoryt(category);
+    setSectiont(section);
+    setItemt(item);
+    // navigate(`/${category}/${section}/${item}`);
+    // setTransit(!transit);
+    // close();
   }
 
   useEffect(()=>{
-    if(jwt){
+    if(categoryt==''){return}
+    else{
+      navigate(`/${categoryt}/${sectiont}/${itemt}`);
+    }
+  },[sectiont,categoryt,itemt])
+
+  useEffect(() => {
+    if (jwt) {
       dispatch(getUser(jwt))
     }
-  },[jwt,auth.jwt])
+  }, [jwt, auth.jwt])
 
-  useEffect(()=>{
-    if(auth.user){
+  useEffect(() => {
+    if (auth.user) {
       handleClose();
-      
+
     }
-    if(location.pathname==="/login" || location.pathname === "/signup"){
+    if (location.pathname === "/login" || location.pathname === "/signup") {
       navigate(-1)
     }
-  },[auth.user])
+  }, [auth.user])
 
-  const handleLogout=()=>{
+  const handleLogout = () => {
     dispatch(logout())
     handleCloseUserMenu()
   }
@@ -334,7 +363,7 @@ export default function Navigation() {
                             )
                           }
                         >
-                          {category.name }
+                          {category.name}
                         </Tab>
                       ))}
                     </TabList>
@@ -370,10 +399,10 @@ export default function Navigation() {
                             >
                               {section.items.map((item) => (
                                 <li key={item.name} className="flow-root">
-                                  <p className="-m-2 block p-2 text-gray-500" onClick={()=> handleCategoryClick(category,section,item,close)}>
-                                  {/* <a href={item.href} className="-m-2 block p-2 text-gray-500"> */}
+                                  <p className="-m-2 block p-2 text-gray-500" onClick={() => handleCategoryClick(category, section, item)}>
+                                    {/* <a href={item.href} className="-m-2 block p-2 text-gray-500"> */}
                                     {item.name}
-                                  {/* </a> */}
+                                    {/* </a> */}
                                   </p>
                                 </li>
                               ))}
@@ -485,7 +514,8 @@ export default function Navigation() {
                               {category.name}
                             </PopoverButton>
                           </div>
-
+                          {/* {({ open }) => ( */}
+                          {/* { transit &&  */}
                           <Transition
                             enter="transition ease-out duration-200"
                             enterFrom="opacity-0"
@@ -533,8 +563,8 @@ export default function Navigation() {
                                             className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
                                           >
                                             {section.items.map((item) => (
-                                              <li key={item.name} className="flex">
-                                                <a href={item.href} onClick={()=>navigate('/{category.name}/{section.name}/{item.name}')}className="px-12 font-bold hover:text-red-600">
+                                              <li  key={item.name} className="flex">
+                                                <a onClick={()=>handleCategoryClick(category.name,section.name,item.name)} href="" className="px-12 font-bold hover:text-red-600">
                                                   {item.name}
                                                 </a>
                                               </li>
@@ -548,8 +578,10 @@ export default function Navigation() {
                               </div>
                             </PopoverPanel>
                           </Transition>
+
+                          {/* )} */}
                         </>
-                      )}
+                        )} 
                     </Popover>
                   ))}
 
@@ -569,34 +601,37 @@ export default function Navigation() {
                 <div className="hidden z-100 lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                   {
                     auth.user?.firstName ? (
-                        <div>
-                          <Avatar className='text-white font-extrabold cursor-pointer' onClick={handleUserClick} sx={{bgcolor: green[300], color:"red", cursor:"pointer",}}
-                            aria-controls={open? "basic-menu": undefined}
-                            aria-haspopup="true"
-                            aria-expanded={open? "true": undefined}
-                           >
-                              {auth.user?.firstName[0].toUpperCase()}
-                          </Avatar>
-                          <Menu className='absolute '  id="basic-menu" anchorEl={anchorEl} open={openUserMenu} onClose={handleCloseUserMenu} MenuListProps={{"aria-labelledby":"basic-button",}}>
+                      <div>
+                        <Avatar className='text-white font-extrabold cursor-pointer' onClick={handleUserClick} sx={{ bgcolor: green[300], color: "red", cursor: "pointer", }}
+                          aria-controls={open ? "basic-menu" : undefined}
+                          aria-haspopup="true"
+                          aria-expanded={open ? "true" : undefined}
+                        >
+                          {auth.user?.firstName[0].toUpperCase()}
+                        </Avatar>
+                        <Menu className='absolute ' id="basic-menu" anchorEl={anchorEl} open={openUserMenu} onClose={handleCloseUserMenu} MenuListProps={{ "aria-labelledby": "basic-button", }}>
                           {/* <Menu id="basic-menu" anchorEl={anchorEl} MenuListProps={{"aria-labelledby":"basic-button",}}> */}
-                        
-                            <MenuItem onClick={handleCloseUserMenu}>Profile</MenuItem>
-                              {/* <MenuItem >Profile</MenuItem> */}
-                              <MenuItem onClick={()=>navigate('/account/order')}>MyOrders</MenuItem>
-                              <MenuItem onClick={handleLogout}>Logout</MenuItem>
-                          </Menu>
-                        </div>
-                    ):(
-                      <Button onClick={handleOpen} className="text-medium font-extrabold  hover:text-xl text-red-600 hover:text-gray-800">SignIn</Button>
+
+                          <MenuItem onClick={handleCloseUserMenu}>Profile</MenuItem>
+                          {/* <MenuItem >Profile</MenuItem> */}
+                          <MenuItem onClick={() => navigate('/account/order')}>MyOrders</MenuItem>
+                          <MenuItem onClick={handleLogout}>Logout</MenuItem>
+                        </Menu>
+                      </div>
+                    ) : (
+                      <div className='flex flex-row space-x-3'>
+                        {/* <Button onClick={handleOpenlogin} className="text-medium font-extrabold  hover:text-xl text-red-600 hover:text-gray-800">SignIn</Button> */}
+
+                        <p onClick={handleOpenlogin} className="text-medium font-extrabold  hover:text-xl text-red-600 hover:text-gray-800">
+                          Sign in
+                        </p>
+                        <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
+                        <p onClick={handleOpensignup} className="text-medium font-extrabold  hover:text-xl text-red-600 hover:text-gray-800">
+                          Create account
+                        </p>
+                      </div>
                     )
                   }
-                  <a href="#" className="text-medium font-extrabold  hover:text-xl text-red-600 hover:text-gray-800">
-                    Sign in
-                  </a>
-                  <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
-                  <a href="#" className="text-medium font-extrabold  hover:text-xl text-red-600 hover:text-gray-800">
-                    Create account
-                  </a>
                 </div>
 
                 {/* <div className="hidden lg:ml-8 lg:flex">
@@ -620,23 +655,23 @@ export default function Navigation() {
                 </div>
 
                 {/* Cart */}
-                <div className="ml-4 flow-root lg:ml-6">
-                  <a href="#" className="group -m-2 flex items-center p-2">
+                <div onClick={()=>{navigate('/cart')}} className="ml-4 flow-root lg:ml-6">
+                  <p href="#" className="group -m-2 flex items-center p-2">
                     <ShoppingBagIcon
                       className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
                     />
                     <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
                     <span className="sr-only">items in cart, view bag</span>
-                  </a>
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </nav>
       </header>
-      <AuthModal handleClose={handleClose} open={openAuthModal}/>
-     
+      {openAuthModal && (location.pathname === "/login" || location.pathname === "/signup") && <AuthModal handleClose={handleClose} open={openAuthModal} />}
+
     </div>
   )
 }

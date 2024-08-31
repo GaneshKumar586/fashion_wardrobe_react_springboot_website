@@ -1,7 +1,12 @@
 import { Button, Grid, TextField } from '@mui/material'
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { placeOrder } from '../../../state/order/Action';
+import { useNavigate } from 'react-router-dom';
 
 const DeliveryAddressForm = () => {
+    const dispatch = useDispatch();
+    const navigate= useNavigate();
     const handleSubmit=(e)=>{
         e.preventDefault();
         console.log("address");
@@ -15,6 +20,10 @@ const DeliveryAddressForm = () => {
             zipCode:data.get("zip"),
             mobile:data.get("phone"),
         }
+        const orderData = {address, navigate}
+        dispatch(placeOrder(orderData))
+        navigate(`?step=${3}`)
+        console.log("address", address);
     }
     return (<form onSubmit={handleSubmit}>
         <div className='border-gray-300 flex flex-col items-end justify-start pt-8 pl-4'>

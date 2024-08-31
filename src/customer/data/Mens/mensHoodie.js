@@ -8,7 +8,7 @@ const mensHoodie=[
         discountPersent:50,
     },
     {
-        imageUrl:"https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1497448_alternate10?$rl_4x5_pdp$ ",
+        imageUrl:"https://images.bestsellerclothing.in/data/JJ/12-oct-2023/270408701_g1.jpg?width=415&height=550&mode=fill&fill=blur&format=auto ",
         title: "Vintage Fit Fleece Graphic Sweatshirt" ,
         brand:"Polo Ralph Lauren ",
         price:1999,
@@ -16,7 +16,7 @@ const mensHoodie=[
         discountPersent:50,
     },
     {
-        imageUrl:"https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1497448_alternate10?$rl_4x5_pdp$ ",
+        imageUrl:"https://images.bestsellerclothing.in/data/JJ/23-oct-2023/270409202_g1.jpg?width=415&height=550&mode=fill&fill=blur&format=auto ",
         title: "Vintage Fit Fleece Graphic Sweatshirt" ,
         brand:"Polo Ralph Lauren ",
         price:1999,
@@ -24,7 +24,7 @@ const mensHoodie=[
         discountPersent:50,
     },
     {
-        imageUrl:"https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1497448_alternate10?$rl_4x5_pdp$ ",
+        imageUrl:"https://images.bestsellerclothing.in/data/JJ/2-aug-2023/255066803_g1.jpg?width=415&height=550&mode=fill&fill=blur&format=auto ",
         title: "Vintage Fit Fleece Graphic Sweatshirt" ,
         brand:"Polo Ralph Lauren ",
         price:1999,
@@ -32,7 +32,7 @@ const mensHoodie=[
         discountPersent:50,
     },
     {
-        imageUrl:"https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1497448_alternate10?$rl_4x5_pdp$ ",
+        imageUrl:"https://images.bestsellerclothing.in/data/JJ/12-oct-2023/270408301_g1.jpg?width=415&height=550&mode=fill&fill=blur&format=auto ",
         title: "Vintage Fit Fleece Graphic Sweatshirt" ,
         brand:"Polo Ralph Lauren ",
         price:1999,
@@ -40,7 +40,7 @@ const mensHoodie=[
         discountPersent:50,
     },
     {
-        imageUrl:"https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1497448_alternate10?$rl_4x5_pdp$ ",
+        imageUrl:"https://images.bestsellerclothing.in/data/JJ/11-sep-2023/270408901_g1.jpg?width=415&height=550&mode=fill&fill=blur&format=auto ",
         title: "Vintage Fit Fleece Graphic Sweatshirt" ,
         brand:"Polo Ralph Lauren ",
         price:1999,
@@ -48,7 +48,7 @@ const mensHoodie=[
         discountPersent:50,
     },
     {
-        imageUrl:"https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1497448_alternate10?$rl_4x5_pdp$ ",
+        imageUrl:"https://images.bestsellerclothing.in/data/JJ/28-aug-2023/148849501_g1.jpg?width=415&height=550&mode=fill&fill=blur&format=auto",
         title: "Vintage Fit Fleece Graphic Sweatshirt" ,
         brand:"Polo Ralph Lauren ",
         price:1999,
@@ -56,7 +56,7 @@ const mensHoodie=[
         discountPersent:50,
     },
     {
-        imageUrl:"https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1497448_alternate10?$rl_4x5_pdp$ ",
+        imageUrl:"https://images.bestsellerclothing.in/data/JJ/11-sep-2023/270409101_g1.jpg?width=415&height=550&mode=fill&fill=blur&format=auto",
         title: "Vintage Fit Fleece Graphic Sweatshirt" ,
         brand:"Polo Ralph Lauren ",
         price:1999,
@@ -64,7 +64,7 @@ const mensHoodie=[
         discountPersent:50,
     },
     {
-        imageUrl:"https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1497448_alternate10?$rl_4x5_pdp$ ",
+        imageUrl:"https://images.bestsellerclothing.in/data/JJ/2-aug-2023/255066803_g1.jpg?width=415&height=550&mode=fill&fill=blur&format=auto",
         title: "Vintage Fit Fleece Graphic Sweatshirt" ,
         brand:"Polo Ralph Lauren ",
         price:1999,
@@ -72,7 +72,7 @@ const mensHoodie=[
         discountPersent:50,
     },
     {
-        imageUrl:"https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1497448_alternate10?$rl_4x5_pdp$ ",
+        imageUrl:"https://images.bestsellerclothing.in/data/JJ/12-oct-2023/270408701_g1.jpg?width=415&height=550&mode=fill&fill=blur&format=auto ",
         title: "Vintage Fit Fleece Graphic Sweatshirt" ,
         brand:"Polo Ralph Lauren ",
         price:1999,
@@ -80,7 +80,7 @@ const mensHoodie=[
         discountPersent:50,
     },
     {
-        imageUrl:"https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1497448_alternate10?$rl_4x5_pdp$ ",
+        imageUrl:"https://images.bestsellerclothing.in/data/JJ/12-oct-2023/270408701_g1.jpg?width=415&height=550&mode=fill&fill=blur&format=auto ",
         title: "Vintage Fit Fleece Graphic Sweatshirt" ,
         brand:"Polo Ralph Lauren ",
         price:1999,

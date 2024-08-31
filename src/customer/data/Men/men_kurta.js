@@ -1,6 +1,6 @@
 export const mens_kurta=[
     {
-        "imageUrl": "https://rukminim1.flixcart.com/image/612/612/l5h2xe80/kurta/x/6/n/xl-kast-tile-green-majestic-man-original-imagg4z33hu4kzpv.jpeg?q=70",
+        "imageUrl": "https://www.tistabene.com/cdn/shop/files/KRT-0366A.jpg?v=1702900692&width=5000",
         "brand": "Majestic Man",
         "title": "Men Printed Pure Cotton Straight Kurta",
         "color": "Green",
@@ -28,7 +28,7 @@ export const mens_kurta=[
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/l/f/r/xl-k-spl668-yellow-sg-leman-original-imagznqcrahgq9rf.jpeg?q=70",
+        "imageUrl": "https://www.tistabene.com/cdn/shop/files/KRT-0350A.jpg?v=1702899337&width=740",
         "brand": "SG LEMAN",
         "title": "Men Embroidered Jacquard Straight Kurta",
         "color": "Yellow",
@@ -56,7 +56,7 @@ export const mens_kurta=[
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/g/6/k/m-sksh-dt1105-pcbl-fubar-original-imafux247zhqym2z-bb.jpeg?q=70",
+        "imageUrl": "https://www.tistabene.com/cdn/shop/files/KRT-0359A.png?v=1720502589&width=5000",
         "brand": "FUBAR",
         "title": "Men Printed Cotton Blend Straight Kurta",
         "color": "Blue",
@@ -84,7 +84,7 @@ export const mens_kurta=[
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/i/v/x/xxl-br-ad-kt-105-adwyn-peter-original-imagj4zyd2q7t6cg.jpeg?q=70",
+        "imageUrl": "https://www.tistabene.com/cdn/shop/files/KRT-0355B.png?v=1720502188&width=740",
         "brand": "ALY JOHN",
         "title": "Men Solid Pure Cotton Straight Kurta",
         "color": "White",
@@ -112,7 +112,7 @@ export const mens_kurta=[
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/j/a/r/l-poch521835-peter-england-original-imag7jg47g7cxhg3-bb.jpeg?q=70",
+        "imageUrl": "https://www.tistabene.com/cdn/shop/files/KRT-0357A.jpg?v=1702899590&width=740",
         "brand": "PETER ENGLAND",
         "title": "Men Woven Design Pure Cotton Straight Kurta",
         "color": "Grey",
@@ -140,7 +140,7 @@ export const mens_kurta=[
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim1.flixcart.com/image/612/612/xif0q/kurta/y/c/x/xl-kast107hp-majestic-man-original-imafw49u5uty4agx-bb.jpeg?q=70",
+        "imageUrl": "https://manyavar.scene7.com/is/image/manyavar/I03_0R5A3835edit%20copy_20-10-2021-20-04:283x395",
         "brand": "Majestic Man",
         "title": "Men Solid Pure Cotton Straight Kurta",
         "color": "Pink",
@@ -168,7 +168,7 @@ export const mens_kurta=[
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim1.flixcart.com/image/612/612/kpodocw0/t-shirt/x/o/4/xl-wr-64-wrodss-original-imag3upwgq9n9fbv.jpeg?q=70",
+        "imageUrl": "https://manyavar.scene7.com/is/image/manyavar/I03_Manyavar%20Still00708_17-08-2022-04-01:283x395",
         "brand": "WRODSS",
         "title": "Men Solid Cotton Blend Straight Kurta",
         "color": "Black",

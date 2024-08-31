@@ -12,7 +12,7 @@
   }
   ```
 */
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import {
   Dialog,
   DialogPanel,
@@ -38,7 +38,11 @@ import ProductCard from './ProductCard'
 import mens_jeans from '../../data/Men/men_jeans'
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import { Padding } from '@mui/icons-material';
-import { useLocation, useNavigate, useNavigation } from 'react-router-dom';
+import { useLocation, useNavigate, useNavigation, useParams } from 'react-router-dom';
+import { findProducts } from '../../../state/product/Action';
+import { useDispatch, useSelector } from 'react-redux';
+import { store } from '../../../state/store';
+import Pagination from '@mui/material/Pagination';
 
 const sortOptions = [
 //   { name: 'Most Popular', href: '#', current: true },
@@ -146,33 +150,77 @@ export default function Product() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-    const handleFilter=(value,sectionId)=>{
-        const searchParams = new URLSearchParams(location.search);
-        let choiceValues = searchParams.getAll(sectionId)
-        if(choiceValues.length>0 && choiceValues[0].split(",").includes(value)){
-            choiceValues = choiceValues[0].split(",").filter((item)=>item!==value);
-            if(choiceValues.length===0){
-                searchParams.delete(sectionId)
-            }
-        }
-        else{
-            choiceValues.push(value);
-        }
-        if(choiceValues.length > 0){
-            searchParams.set(sectionId,choiceValues.join(',')); 
-        }
-        const query = searchParams.toString();
-        navigate({search:`?${query}`})
-    }
-    const handleSingleFilter=(e,sectionId)=>{
-        const searchParams = new URLSearchParams(location.search);
-        searchParams.set(sectionId,e.target.value);
-        const query = searchParams.toString();
-        navigate({search:`?${query}`})
-    }
-    const handleChange=()=>{
+  const dispatch = useDispatch();
+  const params  = useParams();
+  const {product} = useSelector(store=>store)
 
+  const decodedQueryString=decodeURIComponent(location.search);
+  const searchParams = new URLSearchParams(decodedQueryString);
+  const colorValue = searchParams.get("color");
+  const sizeValue = searchParams.get("size");
+  const priceValue = searchParams.get("price");
+  const discount = searchParams.get("discount");
+  const sortValue = searchParams.get("sort");
+  const pageNumber = searchParams.get("page") || 1;
+  const stock = searchParams.get("stock");
+
+  const handleFilter=(value,sectionId)=>{
+      const searchParams = new URLSearchParams(location.search);
+      let choiceValues = searchParams.getAll(sectionId)
+      if(choiceValues.length>0 && choiceValues[0].split(",").includes(value)){
+          choiceValues = choiceValues[0].split(",").filter((item)=>item!==value);
+          if(choiceValues.length===0){
+              searchParams.delete(sectionId)
+          }
+      }
+      else{
+          choiceValues.push(value);
+      }
+      if(choiceValues.length > 0){
+          searchParams.set(sectionId,choiceValues.join(',')); 
+      }
+      const query = searchParams.toString();
+      navigate({search:`?${query}`})
+  }
+
+  const handleSingleFilter=(e,sectionId)=>{
+      const searchParams = new URLSearchParams(location.search);
+      searchParams.set(sectionId,e.target.value);
+      const query = searchParams.toString();
+      navigate({search:`?${query}`})
+  }
+
+  const handlePageChange=(event,value)=>{
+  const searchParams =  new URLSearchParams(location.search)
+    searchParams.set("page", value);
+    const query = searchParams.toString();
+    navigate({search:`?${query}`})
+  }
+
+  const handleChange=()=>{
+    console.log("yet to be worked")
+  }
+  useEffect(()=>{
+    if(!product.products?.size){return;}
+    const [minPrice, maxPrice] = priceValue===null ?[0,0]: priceValue.split("-").map(Number);
+
+    const data = {
+      category: params.subsubsection,
+      colors: colorValue || [],
+      sizes: sizeValue | [],
+      minPrice,
+      maxPrice,
+      minDiscount: discount || 0,
+      sort: sortValue|| "price_low",
+      pageNumber: pageNumber-1,
+      pageSize: 10,
+      stock:stock
     }
+
+    dispatch(findProducts(data));
+
+  },[params.subsubsection , colorValue,sizeValue,priceValue,discount,sortValue,pageNumber,stock])
+  
   return (
     <div className="bg-white">
       <div>
@@ -468,10 +516,15 @@ export default function Product() {
               {/* Product grid */}
               <div className="border-black border-3 m-3 lg:col-span-3">
                 <div className='flex flex-wrap justify-center py-2'>
-                    {mens_jeans.map((item)=><ProductCard product = {item}/>)}
+                    { product.products?.content?.map((item)=> <ProductCard product ={item} /> ) ||
+                    mens_jeans.map((item)=><ProductCard product = {item}/>)
+                    }
                 </div>
               </div>
             </div>
+          </section>
+          <section className='w-full py-4 px-3'>
+          <Pagination count={product?.products?.totalPages || 5} onChange={handlePageChange} variant="outlined" color="primary" />
           </section>
         </main>
       </div>

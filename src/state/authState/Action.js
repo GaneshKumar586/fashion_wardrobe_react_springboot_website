@@ -3,18 +3,18 @@ import { API_BACKEND_BASIC_URI } from "../../configurations/apiConfig"
 import { GET_USER_FAILURE, GET_USER_REQUEST, GET_USER_SUCCESS, LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT, SIGNUP_FAILURE, SIGNUP_REQUEST, SIGNUP_SUCCESS } from "./ActionType"
 
 const signupRequest = () => ({type:SIGNUP_REQUEST});
-const signupSuccess = () => ({type:SIGNUP_SUCCESS,payload:user});
-const signupFailure = () => ({type:SIGNUP_FAILURE,payload:error});
+const signupSuccess = (user) => ({type:SIGNUP_SUCCESS,payload:user});
+const signupFailure = (error) => ({type:SIGNUP_FAILURE,payload:error});
 
 
 const loginRequest = () => ({type:LOGIN_REQUEST});
-const loginSuccess = () => ({type:LOGIN_SUCCESS,payload:user});
-const loginFailure = () => ({type:LOGIN_FAILURE,payload:error});
+const loginSuccess = (user) => ({type:LOGIN_SUCCESS,payload:user});
+const loginFailure = (error) => ({type:LOGIN_FAILURE,payload:error});
 
 
 const getUserRequest = () => ({type:GET_USER_REQUEST});
-const getUserSuccess = () => ({type:GET_USER_SUCCESS,payload:user});
-const getUserFailure = () => ({type:GET_USER_FAILURE,payload:error});
+const getUserSuccess = (user) => ({type:GET_USER_SUCCESS,payload:user});
+const getUserFailure = (error) => ({type:GET_USER_FAILURE,payload:error});
 
 
 const token = localStorage.getItem("jwt"); 
@@ -50,10 +50,11 @@ export const login=(userData)=>async(dispatch)=>{
 export const getUser=(jwt)=>async(dispatch)=>{
     dispatch(getUserRequest())
     try{
-        const res = await axios.get(`${API_BACKEND_BASIC_URI}/api/users/profile`,userData)
-        headers:{
-            "Authorization":`Bearer ${jwt}`
-        }
+        // const headers:{
+        //     "Authorization": `Bearer ${jwt}`
+        // }
+        const res = await axios.get(`${API_BACKEND_BASIC_URI}/api/users/profile`,jwt)
+        
         const user = res.data;
         
         dispatch(getUserSuccess(user))

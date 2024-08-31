@@ -4,6 +4,7 @@ import Modal from '@mui/material/Modal';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUser, signup } from '../../state/authState/Action';
+import CloseIcon from '@mui/icons-material/Close';
 const style = {
     position: 'absolute',
     top: '50%',
@@ -52,6 +53,9 @@ const SignupModal = () => {
       >
         <Box sx={style}>
             <form onSubmit={handleSubmit} action="">
+            <div className='flex flex-end'>
+                    <CloseIcon onClick={()=>{navigate('/')}}/>
+                </div>
                 <div className='grid grid-flow-row space-x-2 p-2'>
                     <div className='flex py-2 space-x-2 flex-row'>
                         <TextField

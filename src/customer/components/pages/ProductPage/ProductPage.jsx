@@ -19,7 +19,7 @@
   }
   ```
 */
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { StarIcon } from '@heroicons/react/20/solid'
 import { Radio, RadioGroup } from '@headlessui/react'
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
@@ -32,7 +32,10 @@ import { mens_kurta } from '../../../data/Men/men_kurta';
 import ItemCard from '../../HomeCategoriesCarousel/ItemCard';
 import mensHoodie from '../../../data/Mens/mensHoodie';
 import { lengha_page1 } from '../../../data/Women/LenghaCholi';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { findProductsById } from '../../../../state/product/Action';
+import { addItemToCart } from '../../../../state/cart/Action';
 
 const theme = createTheme({
     palette: {
@@ -54,7 +57,7 @@ const theme = createTheme({
     },
 });
 
-const product = {
+const staticProduct = {
     name: 'Basic Tee 6-Pack',
     price: '$1990',
     href: '#',
@@ -113,10 +116,11 @@ function classNames(...classes) {
 }
 
 export default function ProductPage() {
-    const [selectedColor, setSelectedColor] = useState(product.colors[0])
-    const [selectedSize, setSelectedSize] = useState(product.sizes[2])
-    const [mainImg, setMainImg] = useState(product.images[0].src)
-
+    const [selectedColor, setSelectedColor] = useState(staticProduct.colors[0])
+    const [selectedSize, setSelectedSize] = useState(staticProduct.sizes[2])
+    // const [mainImg, setMainImg] = useState(staticProduct.images[0].src)
+    const {product} = useSelector(store=>store)
+    
     const navigate = useNavigate();
     //  const mainImage = product.images.map((item)=>{item.src!==mainImg &&
     //     <div className="h-[15rem] w-[15rem] object-cover overflow-hidden">
@@ -127,6 +131,20 @@ export default function ProductPage() {
     //         />
     //     </div>
     // })
+    const handleAddToCart=()=>{
+        navigate("/cart");
+        const data = {productId:params.productId, size: selectedSize.name};
+        dispatch(addItemToCart(data));
+    }
+    const params = useParams();
+    const dispatch = useDispatch();
+
+    useEffect(()=>{
+        if(!product.products?.size){return;}
+        const data ={productId:params.productId}
+        dispatch(findProductsById(data) )
+    },[params.productId])
+
     return (
         <div className="bg-white">
             <div className="pt-6 ">
@@ -134,7 +152,7 @@ export default function ProductPage() {
                 <nav aria-label="Breadcrumb" >
 
                     <ol role="list" className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-                        {product.breadcrumbs.map((breadcrumb) => (
+                        {staticProduct.breadcrumbs.map((breadcrumb) => (
                             <li key={breadcrumb.id}>
                                 <div className="flex items-center">
                                     <a href={breadcrumb.href} className="mr-2 text-sm font-medium text-gray-900">
@@ -154,8 +172,8 @@ export default function ProductPage() {
                             </li>
                         ))}
                         <li className="text-sm">
-                            <a href={product.href} aria-current="page" className="font-medium text-gray-500 hover:text-gray-600">
-                                {product.name}
+                            <a href={staticProduct.href} aria-current="page" className="font-medium text-gray-500 hover:text-gray-600">
+                                {staticProduct.name}
                             </a>
                         </li>
                     </ol>
@@ -165,14 +183,14 @@ export default function ProductPage() {
                 <section className='grid grid-cols-1   lg:grid-cols-10 gap-x-8 gap-y-5 px-4 pt-10'>
                     <div className='flex flex-col col-span-4 items-center'>
                         <div className='overflow-hidden rounded-lg max-w-[25rem] max-h-[35rem'>
-                            <img src={product.images[0].src}
-                                alt={product.images[0].alt}
+                            <img src={product.product ? product.product?.imageUrl : staticProduct.images[0].src}
+                                alt={staticProduct.images[0].alt}
                                 classname="h-full w-full object-cover object-center" />
                         </div>
 
                         <div className='flex flex-wrap mt-5 space-x-5 justify-between '>
                             {
-                                product.images.map((unit) => <div className=' hover:border-red-600 border-2 overflow-hidden rounded-lg max-w-[5rem] max-h-[5rem]'>
+                                staticProduct.images.map((unit) => <div className=' hover:border-red-600 border-2 overflow-hidden rounded-lg max-w-[5rem] max-h-[5rem]'>
                                     <img src={unit.src} alt={unit.alt} className='h-full w-full object-cover object-center' />
                                 </div>
                                 )
@@ -182,8 +200,8 @@ export default function ProductPage() {
                     {/* Product info */}
                     <div className=" w-full col-span-6 max-w-6xl px-4 pb-16 pt-10 sm:px-6 lg:grid   lg:px-8 lg:pb-24 lg:pt-2">
                         <div className="w-full lg:border-r lg:border-gray-200 lg:pr-8">
-                            <p className="text-3xl text-start w-full font-bold tracking-tight text-red-600 ">{product.name}</p>
-                            <p className="text-lg text-start w-full font-bold tracking-tight text-green-600 ">{product.name}</p>
+                            <p className="text-3xl text-start w-full font-bold tracking-tight text-red-600 ">{product.product ? product.product?.brand :staticProduct.name}</p>
+                            <p className="text-lg text-start w-full font-bold tracking-tight text-green-600 ">{product.product ? product.product?.title :staticProduct.name}</p>
                             <hr className='my-4 py-0 bg-red-600 text-red-500'></hr>
                         </div>
 
@@ -191,9 +209,9 @@ export default function ProductPage() {
                         <div className="mt-4 text-start lg:row-span-1 lg:mt-0">
                             <h2 className="sr-only">Product information</h2>
                             <div className='flex justify-start'>
-                                <p className="p-2 merriWeather text-3xl tracking-tight text-red-600">- 49%</p>
-                                <p className="p-2 text-3xl tracking-tight font-bold text-green-800">{product.price}</p>
-                                <p className="p-2 text-sm tracking-tight line-through opacity-50 text-black">M.R.P.:{product.price}</p>
+                                <p className="p-2 merriWeather text-3xl tracking-tight text-red-600">-{product.product ? product.product?.discountPercent :49}%</p>
+                                <p className="p-2 text-3xl tracking-tight font-bold text-green-800">{product.product ? product.product?.price :staticProduct.price}</p>
+                                <p className="p-2 text-sm tracking-tight line-through opacity-50 text-black">M.R.P.:{product.product ? product.product?.actualPrice : staticProduct.price}</p>
 
 
                             </div>
@@ -218,7 +236,7 @@ export default function ProductPage() {
 
                                     <fieldset aria-label="Choose a color" className="mt-4">
                                         <RadioGroup value={selectedColor} onChange={setSelectedColor} className="flex items-center space-x-3">
-                                            {product.colors.map((color) => (
+                                            {staticProduct.colors.map((color) => (
                                                 <Radio
                                                     key={color.name}
                                                     value={color}
@@ -260,7 +278,7 @@ export default function ProductPage() {
                                             onChange={setSelectedSize}
                                             className="grid grid-cols-3 gap-3 sm:grid-cols-8 lg:grid-cols-3"
                                         >
-                                            {product.sizes.map((size) => (
+                                            {staticProduct.sizes.map((size) => (
                                                 <Radio
                                                     key={size.name}
                                                     value={size}
@@ -317,7 +335,7 @@ export default function ProductPage() {
                                         + Add to bag
                                     </button> */}
                                 {/* <AddShoppingCartIcon /> */}
-                                <Box onClick={()=>navigate('/cart')}
+                                <Box onClick={handleAddToCart}
                                     sx={{
                                         py: 0,
                                         px: 2,
@@ -344,7 +362,7 @@ export default function ProductPage() {
                                 <h3 className="sr-only">Description</h3>
 
                                 <div className="space-y-6">
-                                    <p className="text-base text-gray-900">{product.description}</p>
+                                    <p className="text-base text-gray-900">{staticProduct.description}</p>
                                 </div>
                             </div>
 
@@ -353,7 +371,7 @@ export default function ProductPage() {
 
                                 <div className="mt-4">
                                     <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
-                                        {product.highlights.map((highlight) => (
+                                        {staticProduct.highlights.map((highlight) => (
                                             <li key={highlight} className="text-gray-400">
                                                 <span className="text-gray-600">{highlight}</span>
                                             </li>
@@ -366,7 +384,7 @@ export default function ProductPage() {
                                 <h2 className="text-sm font-medium text-gray-900">Details</h2>
 
                                 <div className="mt-4 space-y-6">
-                                    <p className="text-sm text-gray-600">{product.details}</p>
+                                    <p className="text-sm text-gray-600">{staticProduct.details}</p>
                                 </div>
                             </div>
                         </div>

@@ -3,7 +3,7 @@ import React from 'react'
 const ItemCard = ({product}) => {
   return (
     <div className='hover:border-black '>
-        <div className='flex flex-col hover:border-black border-2 w-[17rem] h-[32rem] px-4px items-center justify-center bg-red-600 rounded-lg shadow-lg mt-2 mx-3  overflow-hidden'>
+        <div className='flex flex-col hover:border-black border-2 w-[17rem] h-[31rem] px-4px items-center justify-center bg-red-600 rounded-lg shadow-lg mt-2 mx-3  overflow-hidden'>
             <div className='w-[17rem] mt-0 h-[20rem] hover:w-[18rem]'>
                 {/* <img className='z-2 object-cover object-top w-full h-full' src="https://www.optimized-rlmedia.io/is/image/PoloGSI/s7-1497448_alternate10?$rl_4x5_pdp$ " alt= " "/> */}
                 {/* <img className='object-cover object-topm w-full h-full' src=" " alt= " "/> */}
